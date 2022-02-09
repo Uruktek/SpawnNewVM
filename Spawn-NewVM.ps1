@@ -12,6 +12,7 @@ $_FilePath = '.\config.json'#File path where the config should exist
 # like the storage location shouldnt be changing nor should the vhdpath
 # Construct this like a mod so it can be imported and take params (Do this once it's functional)
 
+# Look into json -> custompsobject as that might make this second look better?
 if (Test-Path -Path $_FilePath -PathType Leaf) {
     $_SavedInfo = Get-Content $_FilePath | Out-String | ConvertFrom-Json
     #$_Name = $_SavedInfo.name May want this to be asked every time
