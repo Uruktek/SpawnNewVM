@@ -5,6 +5,13 @@ $_FilePath = '.\config.json'#File path where the config should exist
 # If you're wanting to use an existing VHD rather than making one when running the script
 # NewVHD needs to be replaced with VHDpath
 
+#TODO:
+# -Computername is a field that can be used this was going to use invokecommand this needs to be added
+# Filter out some of the request as some of them can seem pointless if we make the
+# assumption that this will always be a new vm being created.
+# like the storage location shouldnt be changing nor should the vhdpath
+# Construct this like a mod so it can be imported and take params (Do this once it's functional)
+
 if (Test-Path -Path $_FilePath -PathType Leaf) {
     $_SavedInfo = Get-Content $_FilePath | Out-String | ConvertFrom-Json
     #$_Name = $_SavedInfo.name May want this to be asked every time
